@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate"); %>
+
+<%
+  try {
+    throw new Error('Something went wrong');
+  } catch (error) {
+    const errorStack = `${error.message}\n${error.stack}`;
+    console.error(errorStack);
+%>
+
+<div class="alert alert-danger col-6 offset-3 mt-4" role="alert">
+    <%= errorStack %>
+</div>
+
+<%
+  }
+%>

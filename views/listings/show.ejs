@@ -1,0 +1,97 @@
+<% layout("/layouts/boilerplate"); %>
+
+    <body>
+        <div id="show-listing">
+            <h3 id="show-title">
+                <%= listing.title %>
+            </h3>
+            <div id="show-layout">
+                <div id="show-image-div">
+                    <img src="<%= listing.image %>" alt="" id="show-image">
+
+                </div>
+                <div id="show-info-div">
+
+                    <div id="show-info">
+                        <p id="show-description">
+                            <%= listing.description %>
+                        </p>
+                        <p id="show-price"><strong>Price:</strong> &#8377; <%= listing.price.toLocaleString("en-IN") %>
+                                (per night)</p>
+                        <p id="show-location"><strong>Location:</strong>
+                            <%= listing.location %>
+                        </p>
+                        <p id="show-country"><strong>Country:</strong>
+                            <%= listing.country %>
+                        </p>
+                    </div>
+
+                    <div id="show-btns">
+                        <a href="/listings/<%= listing._id%>/edit" type="button" class="btn btn-primary"
+                            id="show-edit-btn">Edit</a>
+                        <form action="/listings/<%= listing._id %>" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-outline-danger" id="show-dlt-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr>
+
+        <div id="show-reviews">
+            <div id="show-add-review">
+                <h4>Leave a review</h4>
+                <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
+                    <div>
+
+                        <label for="rating" class="form-label">Rating</label><br>
+                        <input type="range" min="1" max="5" step="0.5" id="rating" name="review[rating]">
+                    </div>
+                    <div>
+                        <label for="comment">Comments</label><br>
+                        <textarea name="review[comment]" id="comment" cols="30" rows="2" class="form-control"
+                            required></textarea>
+                        <div class="invalid-feedback">Please share your experience with us!</div>
+                    </div><br>
+                    <button type="submit" class="btn btn-outline-success" id="show-review-submit-btn">Submit</button>
+                </form>
+            </div>
+
+            <div id="show-allreviews">
+                <h4>All Reviews</h4>
+                <!-- <ul>
+                    <% for (review of listing.reviews) { %>
+                        <li> <%= review.comment %>, <%= review.rating %>⭐</li>
+                    <%} %>
+                </ul> -->
+
+                <% for (review of listing.reviews) { %>
+
+                    <div class="card review-card">
+                        <div class="card-body">
+                            <!-- <h5 class="card-title">Special title treatment</h5> -->
+                            <p class="card-text">
+                                <%= review.comment %>
+                            </p>
+                            <p class="card-text">
+                                <%= review.rating %>⭐
+                            </p>
+
+                            <form action="listing/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                                <button href="#" class="btn btn-primary">Like</button>
+                                <button href="#" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="review-card"> <%= review.comment %>, <%= review.rating %>⭐</div> -->
+                    <%} %>
+
+            </div>
+        </div>
+    </body>

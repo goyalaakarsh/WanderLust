@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+}
+
+/* Index */
+#index-heading {
+    margin: 25px 0 25px 28px !important;
+}
+
+#card-container {
+    margin: 0 auto;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+}
+
+#card-container a {
+    text-decoration: none;
+}
+
+.card {
+    width: 340px !important;
+    border: none !important;
+    margin-bottom: 2rem !important;
+    margin: 0 15px;
+    transition: 0.15s;
+    padding: 10px !important;
+    border-radius: 15px !important;
+    cursor: pointer;
+    height: 320px !important;
+    flex: 0 0 25% !important;
+    box-sizing: border-box !important;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+}
+
+.card-img-top {
+    height: 240px !important;
+    width: 320px !important;
+    background-size: cover !important;
+    border-radius: 15px !important;
+}
+
+.card-body {
+    padding: 10px 0 0 10px !important;
+    justify-content: right;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+.card-text {
+    font-weight: 600;
+}
+
+/* Boilerplate */
+body {
+    background-color: aliceblue;
+}
+
+/* Navbar */
+.navbar {
+    height: 4.5rem;
+    background-color: aliceblue;
+}
+
+.navbar-brand {
+    color: rgb(233, 46, 46) !important;
+    font-weight: 600;
+}
+
+#navbar-logo {
+    color: rgb(233, 46, 46);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+/* New */
+#new-heading {
+    margin: 25px 0 25px 30px !important;
+}
+
+#new-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-form-div {
+    margin-bottom: 15px;
+}
+
+#new-form-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .form-control {
+    max-width: 800px !important;
+} */
+
+
+.form-control {
+    min-width: 800px !important;
+}
+
+.form-control {
+    max-width: 800px !important;
+}
+
+/* Large devices (min-width: 950px) */
+@media (min-width: 950px) {
+    .form-control {
+        max-width: none !important;
+        /* Reset max-width for larger screens */
+        min-width: 800px !important;
+    }
+}
+
+/* Medium devices (min-width: 750px) */
+@media (min-width: 750px) and (max-width: 949.98px) {
+    .form-control {
+        max-width: none !important;
+        /* Reset max-width for medium screens */
+        min-width: 600px !important;
+    }
+}
+
+/* Small devices (min-width: 450px) */
+@media (min-width: 450px) and (max-width: 749.98px) {
+    .form-control {
+        max-width: none !important;
+        /* Reset max-width for small screens */
+        min-width: 300px !important;
+    }
+}
+
+/* Extra small devices (min-width: 200px) */
+@media (max-width: 449.98px) {
+    .form-control {
+        max-width: none !important;
+        /* Reset max-width for extra small screens */
+        min-width: 100px !important;
+    }
+}
+
+/* Show */
+#show-listing {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#show-title {
+    margin: 25px 0 25px 28px;
+}
+
+#show-image {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+#show-info {
+    text-align: left;
+}
+
+#show-description {
+    max-width: 500px;
+    text-align: justify;
+}
+
+#show-btns {
+    margin-top: 20px;
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+
+#show-edit-btn {
+    flex: 1;
+    margin-right: 40px;
+}
+
+#show-dlt-btn {
+    flex: 1;
+}
+
+#show-layout {
+    display: flex;
+    align-items: flex-start;
+    /* Center vertically within the container */
+}
+
+#show-reviews {
+    display: flex;
+    gap: 30px;
+}
+
+#show-add-review {
+    text-align: left;
+    max-width: 800px;
+    /* margin-left: 30px; */
+}
+
+textarea.form-control {
+    max-width: 700px !important;
+}
+
+
+#show-review .form-range {
+    width: 35%;
+}
+
+.card.review-card {
+    background-color: rgb(249, 249, 249);
+    margin: 0;
+    width: 250px !important;
+    height: 150px !important;
+}
+
+.card.review-card button {
+    margin-top: 20px !important;
+}
+
+/* #show-review-submit-btn {
+    border: 0;
+    bor
+} */
+
+
+#show-horizontal-layout #show-image-div {
+    max-width: 100%;
+    /* Ensure the image does not exceed the width of its container */
+    margin-right: 20px;
+    /* Adjust margin as needed */
+}
+
+#show-info-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content to the top */
+    margin-left: 30px;
+}
+
+@media (max-width: 800px) {
+    #show-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #show-image-div {
+        margin: 0 auto;
+    }
+
+    #show-info-div {
+        margin-left: 0;
+    }
+}
+
+
+
+/* Edit */
+#edit-heading {
+    margin: 25px 0 25px 30px !important;
+}
+
+#edit-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-form-div {
+    margin-bottom: 15px;
+}
+
+#edit-form-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: #ebebeb;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.f-info {
+    max-width: 800px;
+    /* Adjust max-width as needed */
+}
+
+.f-info-socials {
+    margin-bottom: 10px;
+    /* Adjust margin as needed */
+}
+
+.f-info-socials i {
+    font-size: 20px;
+    /* Increased font size */
+    margin: 0 10px;
+    /* Adjust margin between social icons */
+    cursor: pointer;
+}
+
+.f-info-links {
+    margin-top: 10px;
+    /* Increased margin between text and links */
+}
+
+.f-info-links a {
+    margin: 0 10px;
+    /* Adjust margin as needed */
+    text-decoration: none;
+    cursor: pointer;
+}

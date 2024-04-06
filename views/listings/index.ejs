@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate"); %>
+
+    <body>
+        <h3 id="index-heading">Discover Your Ideal Getaway!</h3>
+        <div class="" id="card-container">
+            <% allListings.forEach(function(listing) { %>
+                <a href="/listings/<%= listing._id %>">
+                    <div class="card">
+                        <img src="<%= listing.image %>" class="card-img-top" alt="listing-image">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <%= listing.title %>
+                            </p>
+                            <p>&#8377;<%= listing.price.toLocaleString("en-IN") %>/night</p>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+        </div>
+    </body>
