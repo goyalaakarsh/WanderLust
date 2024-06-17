@@ -32,7 +32,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
 app.get("/", (req, res) => {
-    res.send("Hi, I am root");
+    res.redirect("/listings");
 });
 
 // New Route 
