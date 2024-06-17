@@ -32,7 +32,9 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+    // res.send("Hi, I am root");
+    const allListings = await Listing.find({});
+    res.render("./listings/index.ejs", { allListings });
 });
 
 // New Route 
