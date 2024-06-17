@@ -31,11 +31,11 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
-app.get("/", (req, res) => {
+app.get("/", wrapAsync(async(req, res) => {
     // res.send("Hi, I am root");
     const allListings = await Listing.find({});
     res.render("./listings/index.ejs", { allListings });
-});
+}));
 
 // New Route 
 app.get("/listings/new", (req, res) => {
